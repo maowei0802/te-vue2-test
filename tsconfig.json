@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2016",
+    "sourceMap": true,
+    "lib": ["es2016"], // TS需要引入的库
+    "outDir": "./dist" // 指定js输出目录
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": ["./src"] // 指定要编译的文件夹
+}
