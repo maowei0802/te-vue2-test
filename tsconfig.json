@@ -4,7 +4,8 @@
     "target": "ES2016",
     "sourceMap": true,
     "lib": ["es2016"], // TS需要引入的库
-    "outDir": "./dist" // 指定js输出目录
+    "outDir": "./dist", // 指定js输出目录
+    "strictPropertyInitialization": true,
   },
   "exclude": [
     "node_modules"
