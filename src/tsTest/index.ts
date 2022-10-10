@@ -45,3 +45,33 @@ class ArrayHelper<T> {
   }
 }
 const helper = new ArrayHelper([1])
+
+interface hasNameProperty {
+  name: string
+}
+/**
+ * 将某个对象的name属性的每个单词的首字母大写，然后将该对象返回
+ */
+function nameToUpperCase<T extends hasNameProperty>(obj: T): T {
+  obj.name = obj.name.split(' ').map(item => item[0].toUpperCase() + item.substring(1)).join(' ')
+  return obj
+}
+const a = {
+  name: 'mao wei'
+}
+nameToUpperCase(a)
+/**
+ * 将两个数组混合
+ */
+function mixinArray<T, K>(arr1: T[], arr2: K[]): (T | K)[] {
+  if (arr1.length !== arr2.length) {
+    throw new Error('数组的长度必须一致')
+  }
+  const result: (T | K)[] = []
+  const len = arr1.length
+  for (let i = 0; i < len; i++) {
+    result.push(arr1[i], arr2[i])
+  }
+  return result
+}
+mixinArray([1, 2, 3], ['a', 'b', 'c'])
